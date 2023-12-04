@@ -15,9 +15,5 @@ public class GrowButton : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
-    public void Grow()
-    {
-        animator.SetTrigger("Grow");
-    }
 
 }
