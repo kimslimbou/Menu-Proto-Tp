@@ -6,19 +6,19 @@ public class Intro : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_Text[] Texts;
+    public Animator animator;
     private int CurrentText = 0;
 
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CurrentText++;
-            NextText();
-        }
+        animator.SetTrigger("UnGrow");
     }
-
+    // Update is called once per frame
+    private void OnMouseDown()
+    {
+        CurrentText++;
+        NextText();
+    }
     private void NextText()
     {
         if (CurrentText < Texts.Length)
@@ -36,10 +36,8 @@ public class Intro : MonoBehaviour
             }
         }
     }
-
     public void ToHints()
     {
-        Debug.Log("hello");
         SceneManager.LoadScene("Hints");
     }
 }

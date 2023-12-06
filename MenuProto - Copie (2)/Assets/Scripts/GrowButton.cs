@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GrowButton : MonoBehaviour
 {
-    public bool actif = false;
-   
-    public void ChangeScene(string scene)
+    [SerializeField]
+    Animator animator;
+
+
+    private void Start()
     {
-        SceneManager.LoadScene(scene);
+        animator.SetTrigger("UnGrow");
     }
 
 }
