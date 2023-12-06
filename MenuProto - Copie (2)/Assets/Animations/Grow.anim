@@ -176,9 +176,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
+    functionName: LoadScene
+    data: Intro
+    objectReferenceParameter: {fileID: 240041729226124182, guid: 673134c8f2b2c9a4299ce9480a59e45b, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

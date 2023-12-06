@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Hints : MonoBehaviour
 {
-    public GameObject Book;
-    public TextMeshProUGUI Text;
-    public TextAsset TextFile;
+    public GameObject[] Image;
+    public TextMeshProUGUI[] Text;
+    public TextAsset[] TextFile = new TextAsset[9];
     public GameObject[] buttons = new GameObject[3];
+    private int CurrentHint = 0;
+    public int CurrentShit;
 
 
     private void Start()
     {
-        Book.SetActive(false);
+        Image[CurrentShit].SetActive(false);
     }
 
-    public void ShowHint()
+    public void ShowHint(int j)
     {
-        Text.text = TextFile.text;
-        Book.SetActive(true);
+        CurrentShit = j;
+        NextHint(j*3);
+        Image[CurrentShit].SetActive(true);
        
         foreach (GameObject buttonObject in buttons)
         {
@@ -35,8 +35,15 @@ public class Hints : MonoBehaviour
         {
             buttonObject.SetActive(true);
         }
-        Book.SetActive(false);
+        Image[CurrentShit].SetActive(false);
         
+    }
+
+    public void NextHint(int h)
+    {
+        CurrentHint = CurrentHint <h+2 && CurrentHint>=h ? CurrentHint+1: h;
+        Debug.Log(CurrentHint);
+        Text[CurrentShit].text = TextFile[CurrentHint].text;
     }
 }
 

@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 public class GrowButton : MonoBehaviour
 {
     public bool actif = false;
-
-    [SerializeField]
-    Animator animator;
-
    
     public void ChangeScene(string scene)
     {
